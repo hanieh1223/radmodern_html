@@ -466,3 +466,32 @@ body.page-home .why .feat p{
     transition:none !important;
   }
 }
+
+
+/* Final override: the collaboration section must have no background layer at all. */
+html body.page-home main#main > section.why,
+html body.page-home section.why#why {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+html body.page-home main#main > section.why::before,
+html body.page-home main#main > section.why::after,
+html body.page-home section.why#why::before,
+html body.page-home section.why#why::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+html body.page-home section.why > .wrap,
+html body.page-home section.why .why-grid,
+html body.page-home section.why .feats,
+html body.page-home section.why .feat,
+html body.page-home section.why .feat .ico {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
