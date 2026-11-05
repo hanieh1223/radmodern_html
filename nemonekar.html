@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>نمونه‌کارهای مفهومی | راد مدرن</title>
+  <meta name="description" content="مروری بر طرح‌های مفهومی راد مدرن در طراحی وب‌سایت و تجربه‌های دیجیتال.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="نمونه‌های مفهومی طراحی | راد مدرن">
+<meta property="og:description" content="طرح‌های مفهومی برای نمایش رویکرد طراحی و توسعه دیجیتال راد مدرن.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="design-system.css">
+</head>
+<body class="page-nemonekar">
+<a class="skip-link" href="#main-content">رفتن به محتوای اصلی</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-container">
+    <!-- برند و لوگو -->
+    <a href="index.html" class="header-brand" aria-label="صفحه اصلی راد مدرن">
+      <span class="brand-logo" aria-hidden="true">
+        <span class="logo-mark">R</span>
+      </span>
+      <div class="brand-text">
+        <strong class="brand-name">راد مدرن</strong>
+        <span class="brand-tag">استودیو راهکارهای دیجیتال</span>
+      </div>
+    </a>
+
+    <!-- منوی ناوبری اصلی دسکتاپ -->
+    <nav class="header-nav" aria-label="منوی اصلی">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">خانه</a></li>
+        <li><a href="index.html#services" class="nav-link">خدمات</a></li>
+        <li><a href="nemonekar.html" class="nav-link is-active" aria-current="page">نمونه‌کارها</a></li>
+        <li><a href="about.html" class="nav-link">درباره ما</a></li>
+        <li><a href="maghalat.html" class="nav-link">مقالات</a></li>
+        <li><a href="contact.html" class="nav-link">تماس با ما</a></li>
+      </ul>
+    </nav>
+
+    <!-- اکشن‌ها -->
+    <div class="header-actions">
+      <div class="header-contact" role="group" aria-label="راه‌های ارتباط سریع">
+        <a class="hc hc--call" href="tel:+989120000000" aria-label="تماس تلفنی" title="تماس تلفنی"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+        <a class="hc hc--tg" href="https://t.me/radmodern" target="_blank" rel="noopener" aria-label="تلگرام" title="تلگرام"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></a>
+        <a class="hc hc--wa" href="https://wa.me/989120000000" target="_blank" rel="noopener" aria-label="واتساپ" title="واتساپ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg></a>
+      </div>
+
+      <!-- دکمه همبرگری موبایل -->
+      <button type="button" class="mobile-toggle" id="mobileMenuBtn" aria-label="باز کردن منوی موبایل" aria-expanded="false" aria-controls="mobileNav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- منوی کشویی موبایل (Drawer) -->
+  <div class="mobile-drawer" id="mobileNav" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <a href="index.html" class="header-brand">
+          <span class="brand-logo" aria-hidden="true"><span class="logo-mark">R</span></span>
+          <div class="brand-text">
+            <strong class="brand-name">راد مدرن</strong>
+            <span class="brand-tag">راهکارهای دیجیتال</span>
+          </div>
+        </a>
+        <button type="button" class="drawer-close" id="drawerCloseBtn" aria-label="بستن منو">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <ul class="drawer-links">
+        <li><a href="index.html" class="drawer-link"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>خانه</a></li>
+        <li><a href="index.html#services" class="drawer-link"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>خدمات</a></li>
+        <li><a href="nemonekar.html" class="drawer-link is-active"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>نمونه‌کارها</a></li>
+        <li><a href="about.html" class="drawer-link"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>درباره ما</a></li>
+        <li><a href="maghalat.html" class="drawer-link"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>مقالات</a></li>
+        <li><a href="contact.html" class="drawer-link"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>تماس با ما</a></li>
+      </ul>
+
+      <div class="drawer-footer">
+        <a href="contact.html" class="btn btn-primary" style="width:100%">شروع همکاری و مشاوره</a>
+        <div class="drawer-social" role="group" aria-label="راه‌های ارتباط سریع">
+        <a class="hc hc--call" href="tel:+989120000000" aria-label="تماس تلفنی" title="تماس تلفنی"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+        <a class="hc hc--tg" href="https://t.me/radmodern" target="_blank" rel="noopener" aria-label="تلگرام" title="تلگرام"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></a>
+        <a class="hc hc--wa" href="https://wa.me/989120000000" target="_blank" rel="noopener" aria-label="واتساپ" title="واتساپ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg></a>
+      </div>
+        <a href="mailto:info@radmodern.ir" class="drawer-contact-line">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <span dir="ltr">info@radmodern.ir</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <p class="eyebrow">رویکرد در طراحی و توسعه</p>
+        <h1>راهکارهایی متناسب با <span class="accent">مسئله هر کسب‌وکار</span></h1>
+        <p>این صفحه چند طرح مفهومی را برای نمایش نوع تجربه‌ها و ساختارهایی که می‌توان طراحی کرد نشان می‌دهد. این موارد نمونه‌های نمایشی هستند و نباید با پروژه‌های تأییدشده مشتریان اشتباه گرفته شوند.</p>
+      </div>
+      <aside class="hero__card">
+        <h2>از مسئله تا تجربه دیجیتال</h2>
+        <p>هر پروژه با شناخت مخاطب، هدف و نیازهای اجرایی آغاز می‌شود.</p>
+        <ol class="steps">
+          <li style="--i:0"><span class="steps__n" aria-hidden="true">۱</span><div><b>شناخت نیاز</b><small>مخاطب، هدف و محدودیت‌های پروژه</small></div></li>
+          <li style="--i:1"><span class="steps__n" aria-hidden="true">۲</span><div><b>طراحی تجربه</b><small>مسیر کاربر، ساختار و رابط</small></div></li>
+          <li style="--i:2"><span class="steps__n" aria-hidden="true">۳</span><div><b>توسعه و آزمون</b><small>پیاده‌سازی و بررسی نهایی</small></div></li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <section class="projects" aria-labelledby="projects-title">
+    <div class="container">
+      <h2 class="section-title" id="projects-title">نمونه‌های مفهومی</h2>
+      <p class="section-sub">برای بررسی پروژه‌ای مشابه، با ما در ارتباط باشید.</p>
+
+      <div class="filters">
+        <div class="filters__buttons" role="group" aria-label="فیلتر نوع نمونه">
+          <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">همه</button>
+          <button class="filter" type="button" data-filter="web" aria-pressed="false">وب‌سایت</button>
+          <button class="filter" type="button" data-filter="app" aria-pressed="false">اپلیکیشن</button>
+          <button class="filter" type="button" data-filter="service" aria-pressed="false">خدماتی</button>
+        </div>
+        <span class="filters__count" id="projectCount" role="status" aria-live="polite">۴ نمونه</span>
+      </div>
+
+      <div class="grid" id="projectGrid">
+        <article class="card" data-kind="app">
+          <div class="card__media"><img src="image/nemonekar1.png" alt="طرح مفهومی رابط کاربری اپلیکیشن" loading="lazy"></div>
+          <div class="card__body">
+            <div class="card__meta"><span>پروژه مفهومی</span><span>اپلیکیشن</span></div>
+            <h3>تجربه مالی همراه</h3>
+            <p>چیدمان اطلاعات و مسیرهای پرتکرار برای یک تجربه مالی ساده‌تر.</p>
+            <ul class="tags"><li>UI/UX</li><li>اپلیکیشن</li></ul>
+            <a class="card__link" href="contact.html">گفت‌وگو درباره پروژه مشابه</a>
+          </div>
+        </article>
+        <article class="card" data-kind="web">
+          <div class="card__media"><img src="image/nemonekar2.png" alt="طرح مفهومی وب‌سایت آموزشی" width="832" height="520" loading="lazy"></div>
+          <div class="card__body">
+            <div class="card__meta"><span>پروژه مفهومی</span><span>آموزشی</span></div>
+            <h3>پلتفرم آموزش آنلاین</h3>
+            <p>ساختار محتوایی برای دسترسی روشن به دوره‌ها و مسیر یادگیری.</p>
+            <ul class="tags"><li>وب‌سایت</li><li>آموزش</li></ul>
+            <a class="card__link" href="contact.html">گفت‌وگو درباره پروژه مشابه</a>
+          </div>
+        </article>
+        <article class="card" data-kind="web">
+          <div class="card__media"><img src="image/nemonekar3.png" alt="طرح مفهومی فروشگاه اینترنتی" width="832" height="520" loading="lazy"></div>
+          <div class="card__body">
+            <div class="card__meta"><span>پروژه مفهومی</span><span>فروشگاهی</span></div>
+            <h3>فروشگاه اینترنتی</h3>
+            <p>تجربه خرید با دسته‌بندی روشن، معرفی محصول و مسیر سفارش کوتاه.</p>
+            <ul class="tags"><li>فروش آنلاین</li><li>تجربه خرید</li></ul>
+            <a class="card__link" href="contact.html">گفت‌وگو درباره پروژه مشابه</a>
+          </div>
+        </article>
+        <article class="card" data-kind="service">
+          <div class="card__media"><img src="image/nemonekar4.png" alt="طرح مفهومی وب‌سایت خدماتی" width="832" height="520" loading="lazy"></div>
+          <div class="card__body">
+            <div class="card__meta"><span>پروژه مفهومی</span><span>خدماتی</span></div>
+            <h3>وب‌سایت معرفی خدمات</h3>
+            <p>معرفی خدمات، پاسخ به پرسش‌های متداول و تسهیل درخواست مشاوره.</p>
+            <ul class="tags"><li>وب‌سایت</li><li>خدمات</li></ul>
+            <a class="card__link" href="contact.html">گفت‌وگو درباره پروژه مشابه</a>
+          </div>
+        </article>
+      </div>
+      <p class="note">تصاویر و عنوان‌های این بخش نمونه‌های مفهومی هستند؛ اطلاعات پروژه‌های واقعی باید با اجازه و مشخصات تأییدشده جایگزین شوند.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>برای پروژه خودتان راهکار می‌خواهید؟</h2>
+      <p>نیاز و هدف کسب‌وکارتان را مطرح کنید تا درباره مسیر مناسب تصمیم بگیریم.</p>
+      <a class="btn" href="contact.html">درخواست مشاوره</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" aria-label="پاورقی سایت">
+  <div class="sf-wrap">
+    <div class="sf-top">
+      <div class="sf-brand">
+        <a class="sf-logo" href="index.html" aria-label="راد مدرن، صفحه اصلی">
+          <span class="sf-mark" aria-hidden="true">R</span>
+          <span><strong>راد مدرن</strong><small>استودیو راهکارهای دیجیتال</small></span>
+        </a>
+        <p>در راد مدرن، ایده‌های شما را به تجربه‌های حرفه‌ای در وب تبدیل می‌کنیم؛ با طراحی خلاقانه، توسعه تخصصی و همراهی در مسیر رشد کسب‌وکارتان.</p>
+        <div class="sf-social" role="group" aria-label="راه‌های ارتباط سریع">
+        <a class="hc hc--call" href="tel:+989120000000" aria-label="تماس تلفنی" title="تماس تلفنی"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+        <a class="hc hc--tg" href="https://t.me/radmodern" target="_blank" rel="noopener" aria-label="تلگرام" title="تلگرام"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></a>
+        <a class="hc hc--wa" href="https://wa.me/989120000000" target="_blank" rel="noopener" aria-label="واتساپ" title="واتساپ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg></a>
+      </div>
+      </div>
+      <nav class="sf-col" aria-label="صفحات سایت">
+        <h3>صفحات سایت</h3>
+        <ul>
+          <li><a href="index.html">خانه</a></li>
+          <li><a href="nemonekar.html">نمونه‌کارها</a></li>
+          <li><a href="about.html">درباره ما</a></li>
+          <li><a href="maghalat.html">مقالات</a></li>
+          <li><a href="contact.html">تماس با ما</a></li>
+        </ul>
+      </nav>
+      <nav class="sf-col" aria-label="خدمات">
+        <h3>خدمات</h3>
+        <ul>
+          <li><a href="index.html#services">طراحی سایت</a></li>
+          <li><a href="index.html#services">توسعه نرم‌افزار</a></li>
+          <li><a href="index.html#services">راهکارهای هوش مصنوعی</a></li>
+          <li><a href="index.html#services">مشاوره دیجیتال</a></li>
+          <li><a href="index.html#why">چرا راد مدرن؟</a></li>
+        </ul>
+      </nav>
+      <nav class="sf-col" aria-label="دسته‌بندی مقالات">
+        <h3>از مقالات بخوانید</h3>
+        <ul>
+          <li><a href="maghalat.html?cat=design">طراحی سایت</a></li>
+          <li><a href="maghalat.html?cat=wordpress">وردپرس</a></li>
+          <li><a href="maghalat.html?cat=seo">سئو و بهینه‌سازی</a></li>
+          <li><a href="maghalat.html?cat=security">امنیت</a></li>
+          <li><a href="maghalat.html?cat=ux">تجربه کاربری</a></li>
+        </ul>
+      </nav>
+      <div class="sf-col">
+        <h3>ارتباط با ما</h3>
+        <ul>
+          <li><a href="mailto:info@radmodern.ir" dir="ltr">info@radmodern.ir</a></li>
+          <li><a href="contact.html">فرم درخواست مشاوره</a></li>
+          <li><a href="index.html#portfolio">نمونه‌های مفهومی</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sf-bottom">
+      <span>© ۱۴۰۵ تمامی حقوق برای راد مدرن محفوظ است.</span>
+      <span>ساخته‌شده با خلاقیت و تخصص</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll('[data-filter]');
+  var cards = document.querySelectorAll('#projectGrid [data-kind]');
+  var count = document.getElementById('projectCount');
+  if (!buttons.length || !cards.length || !count) return;
+
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var filter = button.dataset.filter;
+      var visible = 0;
+      buttons.forEach(function (item) {
+        var active = item === button;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      cards.forEach(function (card) {
+        var show = filter === 'all' || card.dataset.kind === filter;
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
+      count.textContent = visible + ' نمونه';
+    });
+  });
+})();
+</script>
+
+<!-- دکمه‌های شناور -->
+<div class="floating-actions" aria-label="ابزارهای دسترسی سریع">
+  <button type="button" class="floating-btn floating-btn--top" id="backToTopBtn" aria-label="رفتن به بالای صفحه" title="رفتن به بالا">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+  <a href="contact.html" class="floating-btn floating-btn--contact" aria-label="ارتباط سریع با راد مدرن" title="مشاوره و گفت‌وگو درباره پروژه">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

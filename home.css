@@ -1,0 +1,760 @@
+/* راد مدرن — لایه حرکت و گرافیک صفحه اصلی (بعد از site.css لود می‌شود؛ فقط روی body.page-home اثر دارد) */
+body.page-home{--rm-ease:var(--ease,cubic-bezier(.22,1,.36,1))}
+@keyframes rmUp{from{opacity:0;transform:translateY(26px)}}
+@keyframes rmLine{to{transform:scaleX(1)}}
+@keyframes rmFloat{50%{translate:0 -12px}}
+@keyframes rmPop{from{scale:.3;opacity:0}}
+@keyframes rmStep{0%,100%{transform:rotate(-12deg)}35%{transform:translate(-8px,-10px) rotate(-2deg)}70%{transform:translate(-14px,0) rotate(-12deg)}}
+@keyframes rmMarquee{to{transform:translateX(50%)}}
+@keyframes rmDraw{from{stroke-dashoffset:140}}
+@keyframes rmPulse{0%{box-shadow:0 0 0 0 var(--rm-overlay-orange-55)}100%{box-shadow:0 0 0 18px var(--rm-overlay-orange-0)}}
+
+/* ── نوار خدمات متحرک ── */
+body.page-home .marquee{position:relative;z-index:2;overflow:hidden;margin:-28px -2% 0;padding:14px 0;background:var(--rm-blue);color:var(--rm-white);transform:rotate(-1.2deg);box-shadow:0 12px 28px var(--rm-overlay-blue-25)}
+body.page-home .marquee__track{display:flex;width:max-content;animation:rmMarquee 32s linear infinite}
+body.page-home .marquee:hover .marquee__track{animation-play-state:paused}
+body.page-home .marquee span{display:flex;align-items:center;gap:36px;padding:0 0 0 36px;font-size:17px;font-weight:800;white-space:nowrap}
+body.page-home .marquee span::after{content:"✦";margin:0;color:var(--rm-orange)}
+body.page-home .services{padding-top:64px;padding-bottom:20px}
+
+/* ── ظاهر شدن هنگام اسکرول ── */
+.js body.page-home .reveal{opacity:0}
+.js body.page-home .reveal.is-in{opacity:1;animation:rmUp .8s var(--rm-ease) calc(var(--i,0)*80ms) backwards}
+.js body.page-home .sec-title.reveal::before{width:0;transition:width .7s var(--rm-ease) .2s}
+.js body.page-home .sec-title.reveal.is-in::before{width:30px}
+
+/* ── آیکون‌ها با هاور خط‌کشی می‌شوند ── */
+body.page-home .card:hover .ico svg *,body.page-home .feat:hover .ico svg *{stroke-dasharray:140;animation:rmDraw .9s var(--rm-ease)}
+
+/* ── چرا راد مدرن ── */
+body.page-home .why{position:relative;overflow:clip;padding:80px 0}
+body.page-home .why .wrap{position:relative;z-index:1}
+body.page-home .why::before{display:block;content:"";position:absolute;top:-80px;left:-60px;width:240px;height:240px;border-radius:50%;background:var(--rm-orange);opacity:.12;animation:rmFloat 9s ease-in-out infinite}
+body.page-home .why::after{display:block;content:"";position:absolute;bottom:-70px;right:-50px;width:200px;height:200px;border-radius:50%;border:30px solid var(--rm-blue);opacity:.07}
+body.page-home .why-visual img{animation:rmFloat 7s ease-in-out infinite;max-width:100%;height:auto}
+
+/* ── دعوت به اقدام ── */
+body.page-home .cta{margin-top:0}
+body.page-home .cta .btn{animation:rmPulse 2.4s ease-out infinite}
+body.page-home .cta .btn:hover{animation:none}
+
+@media (max-width:520px){body.page-home .marquee span{font-size:15px;gap:24px;padding-left:24px}}
+@media (prefers-reduced-motion:reduce){.js body.page-home .reveal{opacity:1}.js body.page-home .sec-title.reveal::before{width:30px}}
+
+/* ═════ خدمات و نمونه‌کار: کارت‌های آبی با لبه بریده ═════ */
+body.page-home{--vivid:var(--rm-palette-1a2cf0);--vivid-deep:var(--rm-palette-070c5c)}
+body.page-home .services .grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-auto-rows:1fr;
+  align-items:stretch;
+  gap:clamp(16px,2vw,28px);
+}
+body.page-home .svc{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  min-width:0;
+  height:100%;
+  color:inherit;
+  text-decoration:none;
+  transition:transform .35s var(--rm-ease);
+}
+body.page-home .svc:hover{transform:translateY(-6px)}
+body.page-home .svc:focus-visible{
+  outline:3px solid var(--rm-orange);
+  outline-offset:6px;
+  border-radius:24px;
+}
+body.page-home .svc-wrap{
+  display:block;
+  width:100%;
+  filter:drop-shadow(0 16px 24px var(--rm-overlay-vivid-blue-18));
+}
+body.page-home .svc-art{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  overflow:hidden;
+  box-sizing:border-box;
+  width:100%;
+  aspect-ratio:4/4.7;
+  min-height:0;
+  border-radius:28px;
+  padding:clamp(20px,2.3vw,34px);
+  direction:ltr;
+  background:
+    radial-gradient(ellipse at 70% -10%, var(--rm-palette-2a3cff) 0%, transparent 55%),
+    radial-gradient(circle at 85% 105%, var(--rm-palette-3a55ff), transparent 50%),
+    linear-gradient(160deg, var(--rm-palette-1a2cf0), var(--rm-palette-070c5c));
+}
+body.page-home .svc-art::before{
+  content:"";
+  position:absolute;
+  right:-20%;
+  bottom:-10%;
+  width:80%;
+  height:60%;
+  border-radius:40px;
+  background:var(--rm-palette-0a0a4a);
+  opacity:.9;
+  transform:rotate(-14deg);
+  transition:transform .7s var(--rm-ease);
+}
+body.page-home .svc-art::after{
+  content:"";
+  position:absolute;
+  right:-8%;
+  bottom:-14%;
+  width:72%;
+  aspect-ratio:1;
+  border-radius:50%;
+  border:3px solid transparent;
+  border-top-color:var(--rm-orange);
+  border-right-color:var(--rm-orange);
+  rotate:-25deg;
+  transition:rotate .9s var(--rm-ease);
+}
+body.page-home .svc:nth-child(even) .svc-art::before{
+  transform:rotate(12deg);
+  right:auto;
+  left:-25%;
+}
+body.page-home .svc:hover .svc-art::before{transform:rotate(-4deg) translateY(-14px)}
+body.page-home .svc:hover .svc-art::after{rotate:15deg}
+body.page-home .svc-fa{
+  position:relative;
+  z-index:1;
+  display:block;
+  max-width:100%;
+  font:700 clamp(18px,1.7vw,24px)/1.5 var(--rm-font-persian-display);
+  color:var(--rm-orange);
+  overflow-wrap:anywhere;
+  margin-bottom:8px;
+}
+body.page-home .svc-en{
+  position:relative;
+  z-index:1;
+  display:block;
+  font:800 clamp(27px,3vw,46px)/.98 var(--rm-font-display);
+  text-transform:uppercase;
+  text-align:left;
+  overflow-wrap:anywhere;
+}
+body.page-home .svc-en b{
+  display:block;
+  font-weight:inherit;
+  color:var(--rm-white);
+  transition:transform .5s var(--rm-ease);
+}
+body.page-home .svc-en b+b{
+  background:linear-gradient(90deg,var(--rm-white),var(--rm-palette-8fa0ff));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+body.page-home .svc:hover .svc-en b+b{transform:translateX(8px)}
+body.page-home .svc h3{
+  display:flex;
+  align-items:center;
+  min-height:3.1em;
+  margin:20px 0 0;
+  font-size:clamp(17px,1.55vw,21px);
+  line-height:1.55;
+  font-weight:800;
+  color:var(--rm-blue);
+}
+body.page-home .svc small{
+  display:flex;
+  align-items:center;
+  min-height:2.6em;
+  margin:4px 0 10px;
+  font-size:clamp(11px,1vw,13.5px);
+  line-height:1.5;
+  color:var(--rm-palette-7a89a6);
+  direction:ltr;
+  text-align:right;
+  overflow-wrap:anywhere;
+}
+body.page-home .svc p{
+  flex:1;
+  margin:0;
+  font-size:14px;
+  line-height:1.9;
+  color:var(--rm-gray);
+  text-align:right;
+}
+@media (max-width:1100px){
+  body.page-home .services .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  body.page-home .svc-art{aspect-ratio:4/4.2}
+  body.page-home .svc-en{font-size:clamp(30px,4.5vw,46px)}
+}
+@media (max-width:560px){
+  body.page-home .services .grid{grid-template-columns:minmax(0,1fr);grid-auto-rows:1fr;gap:22px}
+  body.page-home .svc-art{aspect-ratio:4/3.8;padding:28px}
+  body.page-home .svc-fa{font-size:22px}
+  body.page-home .svc-en{font-size:clamp(38px,10vw,52px)}
+  body.page-home .svc h3{font-size:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  body.page-home .svc,body.page-home .svc-art::before,body.page-home .svc-art::after{transition:none}
+}
+
+/* نمونه‌کارها (قدیمی – اگر هنوز استفاده شود) */
+body.page-home #portfolio .work{
+  flex:0 0 calc((100% - 56px)/3);
+  background:none;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  overflow:visible;
+}
+body.page-home #portfolio .work:hover{transform:none;box-shadow:none}
+body.page-home #portfolio .shot{
+  position:relative;
+  height:auto;
+  aspect-ratio:5/4;
+  border-radius:30px;
+  background:var(--vivid);
+}
+body.page-home #portfolio .shot::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(to top,var(--rm-overlay-indigo-75),transparent 55%);
+}
+body.page-home #portfolio .shot::after{z-index:2;right:-10%;bottom:-18%;width:55%}
+body.page-home #portfolio .work:hover .shot::after{rotate:15deg}
+body.page-home #portfolio .work .body{padding:20px 4px 0}
+body.page-home #portfolio .work .body h3{font-size:19px;font-weight:800;margin:2px 0 12px}
+body.page-home #portfolio .more{margin:12px 4px 0}
+
+@media (max-width:1100px){
+  body.page-home .services .grid{grid-template-columns:repeat(2,1fr);gap:28px}
+  body.page-home #portfolio .work{flex-basis:calc((100% - 24px)/2)}
+}
+@media (max-width:560px){
+  body.page-home .services .grid{grid-template-columns:1fr;gap:24px}
+  body.page-home #portfolio .work{flex-basis:88%}
+  body.page-home .svc-art{padding:32px 24px}
+}
+
+/* ═════ نمونه‌کار: کادر دستگاه، دسکتاپ و موبایل ═════ */
+body.page-home .showcase{
+  position:relative;
+  overflow:clip;
+  margin:40px 20px 60px;
+  padding:60px 0 50px;
+  border-radius:48px;
+  color:var(--rm-white);
+  background:radial-gradient(ellipse at 50% -10%,var(--rm-palette-2a3cff),transparent 60%),var(--rm-palette-070c5c);
+}
+body.page-home .showcase::before{
+  content:"";
+  position:absolute;
+  left:-120px;
+  bottom:-160px;
+  width:380px;
+  height:380px;
+  border-radius:50%;
+  border:3px solid var(--rm-orange);
+  opacity:.35;
+  animation:rmFloat 9s ease-in-out infinite;
+}
+body.page-home .showcase .sec-title{
+  color:var(--rm-white);
+  justify-content:center;
+  margin-bottom:8px;
+}
+body.page-home .showcase .sec-sub{
+  color:var(--rm-overlay-white-78);
+  text-align:center;
+  max-width:520px;
+  margin-inline:auto;
+}
+
+/* کادر اصلی – اندازه متعادل‌تر */
+body.page-home .sc-frame{
+  position:relative;
+  --sc-w:min(1280px,calc(100vw - 160px));
+  width:var(--sc-w);
+  max-width:none;
+  margin-inline:calc(50% - var(--sc-w)/2);
+  margin-top:48px;
+  padding:28px;
+  background:var(--rm-white);
+  border-radius:44px;
+  box-shadow:0 30px 80px var(--rm-overlay-black-45);
+}
+body.page-home .sc-tab{
+  position:absolute;
+  left:48px;
+  bottom:100%;
+  margin-bottom:-1px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:13px 28px 11px;
+  background:var(--rm-white);
+  border-radius:22px 22px 0 0;
+  font-weight:800;
+  font-size:15.5px;
+  color:var(--rm-blue);
+}
+body.page-home .sc-mark{
+  display:grid;
+  place-items:center;
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:var(--rm-orange);
+  color:var(--rm-white);
+  font-size:14px;
+}
+body.page-home .sc-screen{
+  padding:40px 40px 28px;
+  border:3px solid var(--vivid-deep);
+  border-radius:32px;
+  background:var(--rm-white);
+  text-align:center;
+}
+body.page-home .sc-screen h3{
+  margin:0;
+  font-size:24px;
+  font-weight:800;
+  color:var(--rm-blue);
+}
+body.page-home .sc-screen p{
+  margin:6px 0 0;
+  font-size:14.5px;
+  color:var(--rm-gray);
+}
+body.page-home .sc-screen h3,
+body.page-home .sc-screen p{
+  transition:opacity .25s,transform .25s;
+}
+body.page-home .is-swap .sc-screen h3,
+body.page-home .is-swap .sc-screen p{
+  opacity:0;
+  transform:translateY(6px);
+}
+
+/* ردیف پروژه‌ها */
+body.page-home .sc-row{
+  display:flex;
+  gap:14px;
+  height:340px;
+  margin-top:32px;
+}
+body.page-home .sc-item{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  flex:1 1 0;
+  min-width:0;
+  border-radius:26px;
+  cursor:pointer;
+  color:var(--rm-white);
+  text-align:right;
+  background:linear-gradient(to top,var(--rm-overlay-deep-indigo-7),transparent 58%),
+             linear-gradient(155deg,var(--c1),var(--c2));
+  box-shadow:inset 0 0 0 3px var(--rm-overlay-white-22);
+  transition:flex-grow .75s var(--rm-ease),box-shadow .45s,transform .4s var(--rm-ease);
+}
+body.page-home .sc-item:not(.is-active):hover{transform:translateY(-6px)}
+body.page-home .sc-item:focus-visible{
+  outline:3px solid var(--rm-orange);
+  outline-offset:3px;
+}
+body.page-home .sc-item.is-active{
+  flex-grow:3.6;
+  cursor:default;
+  box-shadow:0 18px 40px var(--rm-overlay-vivid-blue-32);
+}
+body.page-home .sc-item::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  right:-25%;
+  top:-12%;
+  width:95%;
+  aspect-ratio:1;
+  border-radius:50%;
+  background:var(--c3);
+  opacity:.5;
+  transition:transform .9s var(--rm-ease);
+}
+body.page-home .sc-item::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:-20%;
+  top:30%;
+  width:80%;
+  aspect-ratio:1;
+  border-radius:50%;
+  border:3px solid transparent;
+  border-top-color:var(--rm-orange);
+  border-left-color:var(--rm-orange);
+  rotate:-20deg;
+  transition:rotate .9s var(--rm-ease);
+}
+body.page-home .sc-item.is-active::before{transform:scale(1.35) translate(-8%,6%)}
+body.page-home .sc-item.is-active::after{rotate:25deg}
+body.page-home .sc-notch{
+  position:absolute;
+  top:12px;
+  left:50%;
+  translate:-50% 0;
+  width:34%;
+  height:5px;
+  border-radius:5px;
+  background:var(--rm-overlay-white-6);
+  transition:opacity .4s;
+}
+body.page-home .is-active .sc-notch{opacity:0}
+body.page-home .sc-chrome{
+  position:absolute;
+  inset:0 0 auto;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:12px 18px;
+  background:var(--rm-overlay-white-14);
+  backdrop-filter:blur(6px);
+  opacity:0;
+  transform:translateY(-100%);
+  transition:opacity .5s .2s,transform .6s var(--rm-ease) .15s;
+}
+body.page-home .is-active .sc-chrome{opacity:1;transform:none}
+body.page-home .sc-chrome i{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--rm-overlay-white-7);
+}
+body.page-home .sc-chrome em{
+  margin-inline-start:10px;
+  padding:2px 14px;
+  border-radius:99px;
+  background:var(--rm-overlay-white-2);
+  font:normal 11px var(--rm-font);
+  direction:ltr;
+}
+body.page-home .sc-info{
+  position:absolute;
+  inset:auto 0 0;
+  padding:16px 14px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+body.page-home .sc-info strong{
+  font:700 17px/1.4 var(--rm-font-persian-display);
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-variant-alternates: normal;
+  font-size-adjust: none;
+  font-language-override: normal;
+  font-kerning: auto;
+  font-optical-sizing: auto;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  font-variant-position: normal;
+  font-variant-emoji: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  color:var(--rm-orange);
+  transition:font-size .6s var(--rm-ease);
+}
+body.page-home .is-active .sc-info{padding:22px 26px}
+body.page-home .is-active .sc-info strong{font-size:32px}
+body.page-home .sc-x{
+  display:grid;
+  grid-template-rows:0fr;
+  opacity:0;
+  visibility:hidden;
+  transition:grid-template-rows .6s var(--rm-ease),opacity .4s;
+}
+body.page-home .sc-x>div{
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:12px;
+}
+body.page-home .is-active .sc-x{
+  grid-template-rows:1fr;
+  opacity:1;
+  visibility:visible;
+  transition-delay:.25s;
+}
+body.page-home .sc-tags{display:flex;gap:8px;flex-wrap:wrap}
+body.page-home .sc-tags span{
+  padding:3px 14px;
+  border-radius:8px;
+  background:var(--rm-overlay-white-18);
+  font-size:12.5px;
+}
+body.page-home .sc-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 22px;
+  border-radius:99px;
+  background:var(--rm-orange);
+  color:var(--rm-white);
+  font-size:13.5px;
+  font-weight:700;
+  text-decoration:none;
+  transition:transform .3s var(--rm-ease),background .3s;
+}
+body.page-home .sc-cta:hover{
+  background:var(--rm-orange-dark);
+  transform:translateX(-4px);
+}
+body.page-home .sc-cta svg{
+  width:16px;
+  height:16px;
+  fill:none;
+  stroke:var(--rm-white);
+  stroke-width:2.4;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+body.page-home .sc-dots{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:24px;
+}
+body.page-home .sc-dots button{
+  width:14px;
+  height:14px;
+  padding:0;
+  border:3px solid var(--vivid-deep);
+  border-radius:99px;
+  background:var(--rm-white);
+  cursor:pointer;
+  transition:width .5s var(--rm-ease),background .3s,border-color .3s;
+}
+body.page-home .sc-dots button.is-on{
+  width:36px;
+  background:var(--rm-orange);
+  border-color:var(--rm-orange);
+}
+body.page-home .sc-side{
+  position:absolute;
+  left:-72px;
+  top:50%;
+  translate:0 -50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+}
+body.page-home .sc-dev,
+body.page-home .sc-swap{
+  display:grid;
+  place-items:center;
+  width:48px;
+  height:48px;
+  padding:0;
+  border-radius:50%;
+  border:2px solid var(--rm-white);
+  background:transparent;
+  color:var(--rm-white);
+}
+body.page-home .sc-dev.on{background:var(--rm-white);color:var(--vivid)}
+body.page-home .sc-swap{
+  width:34px;
+  height:34px;
+  border:0;
+  cursor:pointer;
+  transition:transform .5s var(--rm-ease);
+}
+body.page-home .sc-swap:hover{transform:rotate(180deg);color:var(--rm-orange)}
+body.page-home .sc-side svg{
+  width:22px;
+  height:22px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* متن انگلیسی داخل کارت فعال */
+body.page-home .sc-en{
+  display:none;
+  direction:ltr;
+  text-align:left;
+  font:800 clamp(34px,3.8vw,50px)/.95 var(--rm-font-display);
+  text-transform:uppercase;
+}
+body.page-home .sc-en b{display:block;font-weight:inherit;color:var(--rm-white)}
+body.page-home .sc-en b+b{
+  background:linear-gradient(90deg,var(--rm-white),var(--rm-palette-8fa0ff));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+body.page-home .is-active .sc-en{display:block}
+
+/* Responsive کادر نمونه‌کار */
+@media (max-width:1400px){
+  body.page-home .sc-frame{--sc-w:min(1180px,calc(100vw - 80px))}
+  body.page-home .sc-side{display:none}
+}
+@media (max-width:1100px){
+  body.page-home .sc-frame{--sc-w:calc(100vw - 48px);padding:20px}
+  body.page-home .sc-screen{padding:28px 24px 20px}
+  body.page-home .sc-row{height:300px}
+}
+@media (max-width:700px){
+  body.page-home .showcase{
+    margin:20px 10px 48px;
+    border-radius:32px;
+    padding:40px 0 48px;
+  }
+  body.page-home .sc-frame{
+    --sc-w:calc(100vw - 28px);
+    padding:12px;
+    border-radius:28px;
+    margin-top:40px;
+  }
+  body.page-home .sc-tab{
+    left:24px;
+    padding:10px 18px 9px;
+    font-size:13.5px;
+  }
+  body.page-home .sc-screen{padding:20px 14px 16px}
+  body.page-home .sc-screen h3{font-size:20px}
+  body.page-home .sc-row{
+    flex-direction:column;
+    height:580px;
+    gap:12px;
+  }
+  body.page-home .sc-item.is-active{flex-grow:4.2}
+  body.page-home .sc-item:not(.is-active) .sc-info{
+    inset:0;
+    justify-content:center;
+    padding:0 16px;
+  }
+  body.page-home .sc-notch{display:none}
+  body.page-home .is-active .sc-info strong{font-size:28px}
+  body.page-home .sc-en{font-size:36px}
+}
+
+/* h1 فقط برای سئو و صفحه‌خوان‌ها */
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+}
+
+/* بلاگ / مقالات */
+body.page-home .portfolio.blog{
+  padding:70px 0 40px;
+}
+body.page-home .portfolio.blog .track{
+  gap:28px;
+}
+body.page-home .portfolio.blog .work{
+  flex:0 0 calc((100% - 84px)/3.2);
+  border-radius:24px;
+  overflow:hidden;
+  background:var(--rm-white);
+  box-shadow:0 12px 32px var(--rm-overlay-blue-8);
+  transition:transform .4s var(--rm-ease),box-shadow .4s;
+}
+body.page-home .portfolio.blog .work:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px var(--rm-overlay-blue-14);
+}
+body.page-home .portfolio.blog .shot{
+  aspect-ratio:16/10;
+  overflow:hidden;
+}
+body.page-home .portfolio.blog .shot img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s var(--rm-ease);
+}
+body.page-home .portfolio.blog .work:hover .shot img{transform:scale(1.06)}
+body.page-home .portfolio.blog .body{
+  padding:18px 20px 8px;
+}
+body.page-home .portfolio.blog .body small{
+  font-size:12.5px;
+  color:var(--rm-orange);
+  font-weight:600;
+}
+body.page-home .portfolio.blog .body h3{
+  font-size:17.5px;
+  font-weight:800;
+  margin:6px 0 12px;
+  color:var(--rm-blue);
+}
+body.page-home .portfolio.blog .tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+body.page-home .portfolio.blog .tags span{
+  padding:3px 12px;
+  border-radius:6px;
+  background:var(--rm-palette-f0f4ff);
+  font-size:12px;
+  color:var(--rm-palette-4a5d8a);
+}
+body.page-home .portfolio.blog .more{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin:14px 20px 20px;
+  font-size:13.5px;
+  font-weight:700;
+  color:var(--rm-blue);
+  text-decoration:none;
+}
+body.page-home .portfolio.blog .more svg{
+  width:15px;
+  height:15px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2.2;
+}
+
+@media (max-width:960px){
+  body.page-home .portfolio.blog .work{flex:0 0 calc((100% - 28px)/2)}
+}
+@media (max-width:560px){
+  body.page-home .portfolio.blog .work{flex:0 0 86%}
+}
+
+/* ── دعوت به اقدام صفحه اصلی ── */
+body.page-home .cta {
+  padding: clamp(44px, 6vw, 76px) 0;
+  text-align: center;
+  background: var(--rm-blue);
+  color: var(--rm-white);
+}
+body.page-home .cta .wrap { max-width: 800px; }
+body.page-home .cta h2 { margin: 0 0 12px; font-size: clamp(22px, 3vw, 32px); line-height: 1.6; }
+body.page-home .cta p { margin: 0 auto 24px; max-width: 60ch; color: var(--rm-overlay-white-82); }
+
+body.page-home .cta .btn-primary:hover { background: var(--rm-orange-dark); }
+body.page-home .site-header .menu a:focus-visible { outline-offset: 4px; }
+body.page-home .sc-item:focus-visible { outline: 3px solid var(--rm-orange); outline-offset: 5px; }
+
+
