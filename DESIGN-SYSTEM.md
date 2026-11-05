@@ -33,3 +33,18 @@ Existing semantic classes (`card`, `work`, `info-card`, `form-card`, `value`, `m
 3. Reuse the existing card classes and shared surface tokens. Add a new component only when its behavior or content structure is genuinely different.
 4. Page stylesheets (`site.css` and `home.css`) may define page layout, unique illustration details, and responsive composition; they should not introduce new global colors, fonts, button anatomy, or card foundations.
 5. Keep the shared stylesheet last in each page's stylesheet order.
+
+
+## Visual direction — Editorial Digital Studio
+
+The shared site-wide visual layer is implemented in `visual-refresh.css`, loaded after `design-system.css` on every public page.
+
+- **Brand character:** a precise, confident digital studio; editorial rather than template-like.
+- **Palette:** ink navy `#101D3A`, warm paper `#F6F5F1`, warm white `#FFFEFA`, stone neutrals, and restrained signal orange `#F4773B`.
+- **Composition:** varied section structures, generous vertical rhythm, clear text measures, and alternating paper / white / ink surfaces. Do not turn every content block into a card.
+- **Typography:** Vazirmatn for Persian UI, strong compact headings, and relaxed body leading.
+- **Interaction:** short purposeful transitions, visible keyboard focus, reduced-motion support, and responsive re-composition.
+- **Page consistency:** shared header, footer, buttons, cards, form controls, page introductions, and editorial reading surfaces are styled centrally. Page-specific CSS owns only unique layout and content.
+- **Preservation:** existing HTML content, navigation targets, forms, portfolio filters, article behavior, and hero media remain unchanged by the visual layer.
+
+For future changes, edit the shared tokens in `visual-refresh.css` first. Avoid introducing a competing palette or one-off button/card foundations in page stylesheets.
